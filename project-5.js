@@ -75,7 +75,7 @@
 	var myMap = L.map('mapid').setView([51.505, -0.09], 2.5);
 
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/willstanton/cirl169ue000fg9nj9dn3bjhv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2lsbHN0YW50b24iLCJhIjoiY2lyZ3UyNjF3MDE2b2czbm4wMWNweWdiYyJ9._94HxAE11gbt_c35n88Rgw', {
+	L.tileLayer('https://api.mapbox.com/styles/v1/willstanton/cirl59frv000cgcknwo8s3yzn/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2lsbHN0YW50b24iLCJhIjoiY2lyZ3UyNjF3MDE2b2czbm4wMWNweWdiYyJ9._94HxAE11gbt_c35n88Rgw', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     // id: 'your.mapbox.project.id',
@@ -97,7 +97,7 @@
 			opacity: 1,
 			color: 'white',
 			dashArray: '5',
-			fillOpacity: 0.7
+			// fillOpacity: 0.7
 
 		};
 	}
