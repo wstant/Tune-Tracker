@@ -54,7 +54,9 @@
 						hoverCountry = 'Russia';
 					}
 
-					$('.result h2').text(`The hottest jam in ${capitalize(hoverCountry)} is ${trackName} by ${artistName}. `)
+					$('.result h2').text(`The hottest jam in ${capitalize(hoverCountry)} is ${trackName} by ${artistName}. `);
+					// $('.result h2 span').text(`${trackName}`);
+					// $('.result h2 span').text(`${artistName}`);
 					
 
 					
@@ -73,7 +75,7 @@
 	var myMap = L.map('mapid').setView([51.505, -0.09], 2.5);
 
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/willstanton/cirjoa1ns0004gcmc7t004qb2/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2lsbHN0YW50b24iLCJhIjoiY2lyZ3UyNjF3MDE2b2czbm4wMWNweWdiYyJ9._94HxAE11gbt_c35n88Rgw', {
+	L.tileLayer('https://api.mapbox.com/styles/v1/willstanton/cirl169ue000fg9nj9dn3bjhv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2lsbHN0YW50b24iLCJhIjoiY2lyZ3UyNjF3MDE2b2czbm4wMWNweWdiYyJ9._94HxAE11gbt_c35n88Rgw', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     // id: 'your.mapbox.project.id',
@@ -88,8 +90,9 @@
 
 	function style() {
 		return {
-			fillColor: '#84bd00',
-			// fillColor: '#756bb1',
+			// fillColor: '#84bd00',
+			fillColor: '#FFC857',
+			// textColor: '#fff',
 			weight: 2,
 			opacity: 1,
 			color: 'white',
@@ -103,8 +106,8 @@
 		var layer = e.target;
 
 		layer.setStyle({
-			weight: 5,
-			color: '#ecebe8',
+			weight: 3,
+			color: 'rgba(46, 64, 82, 0.7)',
 			dashArray: '',
 			fillOpacity: 0.7
 		});
@@ -158,9 +161,15 @@
 	};
 
 	trackInfo.update = function(props) {
-		this._div.innerHTML = 'Look at these jams in ' +  (props ?
-        '<b>' + props.NAME + '</b><br />' 
+		if (props){
+		this._div.innerHTML = 'Turn it up,  ' +  (props ?
+        '<b>' + props.NAME +  '!' + '</b><br />'
         : '') ;
+        }
+        else { 
+        	this._div.innerHTML = '';
+
+        }
   
 		 jamApp.init(props ? props.NAME : '');
 	};

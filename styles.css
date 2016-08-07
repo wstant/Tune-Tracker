@@ -8,16 +8,26 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 #mapid { height: 400px; width: 1000px; }
 
+body {
+	background-color: #fff;
+}
+
 .container {
 	max-width: 1100px;
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	font-family: 'Indie Flower', cursive;
+	/*font-family: 'Indie Flower', cursive;*/
+	font-family: 'Sintony', sans-serif;
+	color: #412234;
 }
 
 .jamMap {
 	margin: 3% auto;
+	border-radius: 50px;
+	border: 2px solid #412234;
+	/*overflow: hidden;*/
+	z-index: 0;
 }
 
 h1 {
@@ -34,6 +44,10 @@ h3 {
 
 p {
 	text-align: center;
+}
+
+span {
+	font-weight: bold;
 }
 
 .trackInfo {
