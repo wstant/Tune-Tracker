@@ -40,11 +40,13 @@
 			$.when(jamApp.getTracks(hoverCountry))
 				.then(function(topTracks){
 					var rank = Math.floor(Math.random() * 4);
+
+				
 					
-					var topTrack = topTracks.tracks.track[6];
-					var trackName = topTracks.tracks.track[6].name;
-					var trackUrl = topTracks.tracks.track[6].url;
-					var artistName = topTracks.tracks.track[6].artist.name;
+					var topTrack = topTracks.tracks.track[5];
+					var trackName = topTracks.tracks.track[5].name;
+					var trackUrl = topTracks.tracks.track[5].url;
+					var artistName = topTracks.tracks.track[5].artist.name;
 					// console.log(jamApp.getTracks('Germany'));
 					// console.log(topTracks);
 					console.log(trackName);
@@ -54,7 +56,7 @@
 						hoverCountry = 'Russia';
 					}
 
-					$('.result h2').text(`The hottest jam in ${capitalize(hoverCountry)} is ${trackName} by ${artistName}. `);
+					$('.result h2').html(`<span class="hoverCountry">${capitalize(hoverCountry)}'s</span> jamming to <span class="trackName">${trackName}</span> by <span class="artistName">${artistName}</span>. `);
 					// $('.result h2 span').text(`${trackName}`);
 					// $('.result h2 span').text(`${artistName}`);
 					
@@ -107,7 +109,8 @@
 
 		layer.setStyle({
 			weight: 3,
-			color: 'rgba(46, 64, 82, 0.7)',
+			// color: 'rgba(46, 64, 82, 0.7)',
+			color: 'rgba(65, 34, 52, 0.7)',
 			dashArray: '',
 			fillOpacity: 0.7
 		});
@@ -117,6 +120,7 @@
 		}
 
 		trackInfo.update(layer.feature.properties);
+		$('h2').addClass('fade');
 	}
 
 	var geojson;
@@ -124,7 +128,9 @@
 	function resetHighlight(e) {
 		geojson.resetStyle(e.target);
 		trackInfo.update();
-		$('.result h2').text(`Hover over a country! `);
+		// $('.result h2').text(`Hover over a country! `);
+		$('.result h2').text(` `)
+		$('h2').removeClass('fade');
 	}
 
 	function zoomToFeature(e) {
@@ -156,6 +162,7 @@
 
 	trackInfo.onAdd = function(myMap) {
 		this._div = L.DomUtil.create('div', 'trackInfo');
+		// this._div = {color: #412234};
 		this.update();
 		return this._div;
 	};
@@ -188,14 +195,29 @@
 	// };
 
 	// myMap.on('click', onMapClick);
+	// $('.overlay').on(click, function(){
+	// 	$('.overlay').addClass('hidden');
+	// });
 
-
+	// $('#overlay').click(function(){
+	// 	// $('#overlay').hide(1000);
+	// 	$('#overlay').addClass('animated fadeOut hidden');
+	// 	// class="animated zoomIn"
+	// 	console.log('this ran')
+	// });
 	$(function(){
-
+		
 		// jamApp.init();
 	});
 
 	// TO-DO
+	// Change highlight of song and track name
+	// add overlay with js
+	// add written conent
+	//
 	// 	1) Style.
+	//		- figure out why map font is not uniform
+	//		- map font color
 	//	2) Go to song page on click.
 	// 	3) Display error if there is no data for a country.
+	//	4) Add if statements to skip over track if it's JB or Adele
