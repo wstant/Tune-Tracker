@@ -6,11 +6,31 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 
-#mapid { height: 400px; width: 1000px; }
+#mapid { height: 500px; width: 1000px; margin-bottom: 5%;}
 
 body {
 	background-color: #fff;
-	background-color: #412234;
+	/*background-color: #412234;*/
+	/*background-color: #77B6EA;*/
+}
+
+header {
+	height: 100vh;
+	text-align: center;
+}
+.headerTitle {
+	border: 4px solid #412234;
+	border-radius: 50px;
+	padding: 5%;
+	margin-top: 3%;
+}
+
+header p {
+	font-size: 1.5rem;
+}
+
+header p span {
+	font-size: 0.8rem;
 }
 
 .container {
@@ -21,25 +41,60 @@ body {
 	/*font-family: 'Indie Flower', cursive;*/
 	font-family: 'Sintony', sans-serif;
 	color: #412234;
-	color: #fff;
+	/*color: #fff;*/
+}
+
+.content {
+	height: 100vh;
+}
+
+ a {
+	transition: color 0.5s;
+}
+ a:hover {
+	color: #77B6EA;
 }
 
 .jamMap {
 	margin: 3% auto;
 	border-radius: 50px;
-	border: 2px solid #412234;
+	border: 4px solid #412234;
 	/*overflow: hidden;*/
 	z-index: 0;
 }
 
 h1 {
 	text-align: center;
+	font-size: 7rem;
+	letter-spacing: 0.3rem;
+	margin-top: 2%;
+
 }
 
 h2 {
 	text-align: center;
 	 /*transition: opacity 2s ease-in;*/
+	 
+}
+
+header h2 {
+	text-align: center;
+	 /*transition: opacity 2s ease-in;*/
 	  /*animation: fadein 2s;*/
+	  font-size: 3rem;
+	  letter-spacing: 0.3rem;
+	  /*margin-top: 10%;*/
+}
+
+i.fa-arrow-down{
+	margin-top: 5%;
+	 -webkit-animation-duration: 1.2s;
+	 -webkit-animation-delay: 3s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.fa:before {
+	font-size: 3rem;
 }
 
 .fade {
@@ -65,6 +120,7 @@ p {
 a {
 	text-decoration: none;
 	color: #77B6EA;
+	color: #412234;
 	font-style: italic;
 }
 
@@ -104,6 +160,7 @@ span {
 	color: #DB2B39;
 	color: #29335C;
 	color: #77B6EA;
+	/*color: #412234;*/
 }
 
 .artistName {
@@ -112,6 +169,7 @@ span {
 	color: #DB2B39;
 	color: #29335C;
 	color: #77B6EA;
+	/*color: #412234;*/
 }
 
 .trackInfo {
@@ -129,5 +187,5 @@ span {
 }
 
 .hidden {
-	display:hidden;
+	display:none;
 }

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Pop.FM</title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+	<script src="https://use.fontawesome.com/42687a9496.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Sintony:400,700" rel="stylesheet">
@@ -19,22 +20,36 @@
 		</div>
 	 </div> -->
 	<div class="container">
-	<h1>Pop.FM</h1>
-	<p>The most popular songs from around the globe.</p>
-	<p>Click on a country to see the hottest jam</p>
-	<div id="mapid" class="jamMap"></div>
-	<div class="result">
-		<h2></h2>
-		<h3 class="hidden">Check it out <a href="">here</a></h3>
-		<!-- <h3> <a href=""></a></h3> -->
+	<header>
+	<div class="headerTitle">
+		<h2>Welcome to</h2>
+		<h1>Pop.FM</h1>
+		<p>The most popular songs from around the globe.</p>
+		<p><span>*According to Last.fm</span></p>
+	</div>
+		<a href="#content"><i class="fa fa-arrow-down animated bounce" aria-hidden="true"></i></a>
+
+	</header>
+	<div class="content" id="content">
+		<div id="mapid" class="jamMap"></div>
+		<div class="result">
+			<h2></h2>
+			<h3 class="hidden">Check it out <a href="">here</a></h3>
+			<!-- <h3> <a href=""></a></h3> -->
+		</div>
 	</div>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js"></script>
 <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
 <script src="countryBorders.js"></script>
 <script src="project-5.js"></script>
-
+<script>
+		$(function(){
+			$('a').smoothScroll();
+		});
+</script>
 	
 </body>
 </html>

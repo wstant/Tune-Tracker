@@ -59,7 +59,7 @@
 					$('.result h2').html(`<span class="hoverCountry">${capitalize(hoverCountry)}'s</span> jamming to <span class="trackName">${trackName}</span> by <span class="artistName">${artistName}</span>. `);
 					// $('.result h2 span').text(`${trackName}`);
 					// $('.result h2 span').text(`${artistName}`);
-					$('.result h3').html(`Check it out <a>here</a>`);
+					// $('.result h3').html(`Check it out <a>here</a>`);
 					$('.result h3 a').attr('href', trackUrl);
 					// <a src="${trackUrl}">here</a>
 					
@@ -200,6 +200,9 @@
 	
 
 	trackInfo.addTo(myMap);
+
+
+	// $('.fa-arrow-down').animateCss('pulse');
 	// Popup with Info
 	// var popup = L.popup();
 	   
