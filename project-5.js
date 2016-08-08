@@ -23,7 +23,7 @@
 		return string.charAt(0).toUpperCase() + string.slice(1); 
 	} 
 
-	$('.result h2').text(`Hover over a country! `);
+	$('.result h2').text(`Click on a country! `);
 					// $('.result h3 a').attr('href',trackUrl );
 	
 	jamApp.init = function(hoverCountry){
@@ -59,6 +59,9 @@
 					$('.result h2').html(`<span class="hoverCountry">${capitalize(hoverCountry)}'s</span> jamming to <span class="trackName">${trackName}</span> by <span class="artistName">${artistName}</span>. `);
 					// $('.result h2 span').text(`${trackName}`);
 					// $('.result h2 span').text(`${artistName}`);
+					$('.result h3').html(`Check it out <a>here</a>`);
+					$('.result h3 a').attr('href', trackUrl);
+					// <a src="${trackUrl}">here</a>
 					
 
 					
@@ -118,9 +121,21 @@
 		if(!L.Browser.ie && !L.Browser.opera) {
 			layer.bringToFront();
 		}
+		// $('h2').addClass('fade');
+		// trackInfo.update(layer.feature.properties);
+		// $('h2').addClass('fade');
+	}
 
-		trackInfo.update(layer.feature.properties);
+	function displayInfo(e) {
+		var layer = e.target;
 		$('h2').addClass('fade');
+		$('h3').addClass('fade');
+		$('h3').removeClass('hidden');
+		// $('h2').removeClass('fade');
+		// $('h2').addClass('fade');
+		trackInfo.update(layer.feature.properties);
+		goToTrack();
+		// $('h2').removeClass('fade');
 	}
 
 	var geojson;
@@ -129,8 +144,9 @@
 		geojson.resetStyle(e.target);
 		trackInfo.update();
 		// $('.result h2').text(`Hover over a country! `);
-		$('.result h2').text(` `)
+		// $('.result h2').text(` `)
 		$('h2').removeClass('fade');
+		$('h3').removeClass('fade');
 	}
 
 	function zoomToFeature(e) {
@@ -147,7 +163,7 @@
 		layer.on({
 			mouseover: highlightFeature,
 			mouseout: resetHighlight,
-			// mouseclick: goToTrack()
+			click: displayInfo
 		});
 	}
 
